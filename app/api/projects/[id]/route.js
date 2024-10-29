@@ -1,4 +1,4 @@
-import Project from "@/models/Project";
+import Project from "@/models/project";
 import { connectToDB } from "@/utils/database";
 
 export async function GET(req, { params }) {

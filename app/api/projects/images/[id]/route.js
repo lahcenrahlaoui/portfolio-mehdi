@@ -1,4 +1,4 @@
-import Project from "@/models/Project"; // Assuming you have a Project model
+import Project from "@/models/project"; // Assuming you have a Project model
 import { connectToDB } from "@/utils/database";
 import cloudinary from "@/utils/cloudinary";
 //POST method
