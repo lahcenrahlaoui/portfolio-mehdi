@@ -161,7 +161,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                                 }}
                                 className="h-full relative "
                             >
-                                <div className="fixed bottom-2 w-full flex gap-1 px-4  ">
+                                <div className="fixed bottom-2 w-full flex gap-1 px-4 bg-green-400  ">
                                     <a
                                         href="https://www.youtube.com/@mehdihachid"
                                         target="_blank"
@@ -204,7 +204,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                     }}
                 >
                     {show && (
-                        <>
+                        <div className="flex flex-col  justify-between  h-full  ">
                             <ul className="  justify-start items-center uppercase   w-full  ">
                                 {/* Removed Multimedia Artist and Artistic Director */}
                                 <li
@@ -264,7 +264,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                                                 onClick={() =>
                                                     setSelectedProject(project)
                                                 }
-                                                className={`w-full flex text-left py-2   text-base uppercase cursor-pointer
+                                                className={`w-full flex text-left py-2 text-base uppercase cursor-pointer
                                                 transition-all duration-200 ease-in-out   
                                               
                                             ${
@@ -276,7 +276,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                                             >
                                                 <a
                                                     href="#"
-                                                    class="group transition duration-300 h-4 md:inline ease-in-out      "
+                                                    class="group transition duration-300 md:inline ease-in-out "
                                                 >
                                                     {project.title}
 
@@ -290,11 +290,11 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                             </ul>
                             <div
                                 style={{
-                                    fontSize: textSize / (textSize / 25) + "px",
+                                    fontSize: textSize / (textSize / 30) + "px",
                                 }}
-                                className="h-full relative"
+                                className="  relative mb-20"
                             >
-                                <div className="absolute bottom-28 text-4xl  w-full flex flex-col gap-2 px-4 ">
+                                <div className="        w-full flex flex-col  gap-2   ">
                                     <a
                                         className="flex gap-1 items-center"
                                         href="https://www.youtube.com/@mehdihachid"
@@ -329,7 +329,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                                     </a>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     )}
                 </div>
             )}
