@@ -2,20 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700&display=swap");
+
+@font-face {
+    font-family: "BigShouldersDisplay";
+    src: url("/fonts/BigShouldersDisplay-VariableFont_wght.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "PoppinsMedium";
+    src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@layer base {
+    * {
+        font-family: "PoppinsMedium", sans-serif;
+    }
+}
+
+/* html,
+body {
+    overflow: hidden;
+} */
+
+/* @font-face {
+  font-family: 'BigShouldersDisplay';
+  src: url('/fonts/BigShouldersDisplay-VariableFont_wght.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Plain';
+  src: url('/fonts/Plain-SuperItalic.otf') format("opentype");
+ 
+}
+
+@font-face {
+  font-family: 'BigShouldersDisplay';
+  src: url('/fonts/Poppins-Medium.ttf');
+  font-weight: 800;  
+}
+
+
+
+.name {
+  font-family:'Poppins' , sans-serif !important  ;
+  font-size : 1.4rem ; 
+  
+}
+
+ 
+
+.body-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;  
+} 
+  */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Add scrollbar styling to the page */
+/* For Chrome, Safari, and Edge */
+/* ::-webkit-scrollbar {
+    width: 8px;  
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;  
+    border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;  
+    border-radius: 10px;
+}
+
+ 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1; 
+} */
+
+/* End scrollbar styling to the page */
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Set the container to full viewport height */
+}
+
+/* Basic image styling */
+.image {
+    position: absolute;
+    width: 460px; /* Set a smaller width for the images */
+    height: auto; /* Maintain aspect ratio */
+}
+.image-about{
+  width: 460px; /* Set a smaller width for the images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Positioning for each image */
+.image1 {
+    z-index: 100;
+    top: 0; /* Top right */
+    right: 0;
+}
+
+.image2 {
+    top: 50%; /* Center vertically on the left */
+    left: 0;
+    transform: translateY(-50%); /* Centering vertically */
+}
+
+.image3 {
+    bottom: 0; /* Bottom right */
+    right: 0;
 }

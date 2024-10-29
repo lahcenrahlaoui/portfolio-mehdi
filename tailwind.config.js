@@ -11,7 +11,12 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+       fontFamily: {
+        BigShouldersDisplay: ['BigShouldersDisplay','sans-serif'],
+        PoppinsMedium :  ['PoppinsMedium','sans-serif'],
+      },
     },
   },
   plugins: [],
 };
+ 
