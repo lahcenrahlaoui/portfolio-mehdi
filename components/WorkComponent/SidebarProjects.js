@@ -4,12 +4,15 @@ const SidebarProjects = ({ projects, setSelectedProject, selectedProject , proje
 
 
 
-    const {  value } = useMyContext();
+    const {  valueAboutRef , valueWorksRef } = useMyContext();
  
+    console.log("valueAboutRef")
+    console.log("valueAboutRef")
+    console.log(valueWorksRef)
     
     return (
-        <div className={` w-48 bg-white   h-screen text-black  border-r border-gray-200 py-3 md:py-0 overflow-y-auto`}>
-            <div className={` flex flex-col pt-14 md:pt-0   `} style={{ marginTop: `${value/3.3+"px"}` }}>
+        <div className={` w-48 h-screen border-r border-gray-200 py-3 md:py-0 overflow-y-auto`}>
+            <div className={` flex flex-col pt-14 md:pt-0   `} style={{ marginTop: `${valueWorksRef/1.2+"px"}` }}>
                 {[...projects , ...projectsSections].map((project, index) => (
                     <div className=" " key={project.title}>
                          <button

@@ -1,3 +1,6 @@
+
+import Image from "next/image"
+
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,9 +28,13 @@ const SliderImages = ({ list }) => {
     let details = display && (
         <motion.div
             onClick={() => handleOpen("", "")}
-            className="flex justify-center items-center inset-0 absolute bg-black bg-opacity-80 transition-opacity duration-500 ease-in-out z-20"
+            className="flex justify-center items-center inset-0 absolute bg-black bg-opacity-80 transition-opacity duration-500 ease-in-out z-50"
         >
-            <motion.img layoutId={layoutId} src={display} className="w-9/12 h-9/12 object-cover" alt="" />
+            <motion.div className="w-9/12 h-9/12" layoutId={layoutId} >
+                <Image  src={display} className="w-full h-full object-cover"    
+                   width={600} height={600}
+                    alt="Picture of the author" />
+            </motion.div>
         </motion.div>
     );
 
@@ -44,12 +51,20 @@ const SliderImages = ({ list }) => {
                 >
                     {list.map((item, idx) => (
                         <SwiperSlide key={item + idx} className="w-full">
-                            <motion.img
+                            <motion.div
+                            
                                 onClick={() => handleOpen(item, idx)}
                                 layoutId={item + idx + "image"}
+                            >
+
+                            <Image
                                 className="w-full h-full object-cover"
                                 src={item}
-                            />
+                                width={500}
+                                height={300}
+                                alt="Picture of the author"
+                                />
+                                </motion.div>
                         </SwiperSlide>
                     ))}
                         <SwiperSlide   className=" ">
@@ -63,9 +78,9 @@ const SliderImages = ({ list }) => {
     );
 
     return (
-        <div className="w-screen h-screen overflow-x-hidden">
-            <div className="z-[9999] h-full">
-                <div className="flex flex-col md:flex-row gap-5 md:justify-center w-full h-3/5">
+        <div className="w-screen overflow-x-hidden">
+            <div className="z-[9999]   ">
+                <div className="flex flex-col md:flex-row gap-5 bg-gree justify-center items-center w-full h-3/5">
                     {details}
                     {content}
                 </div>

@@ -13,12 +13,15 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { useMyContext } from "@/context/heightContext";
 
-const Projects = ({ projects, selectedProject, projectsSections }) => {
+const ProjectsPhone = ({ projects, selectedProject, projectsSections }) => {
     const project = projects.find(
         (proj) => proj.title === selectedProject.title
     );
 
-    const showImages = <SliderImages list={selectedProject?.images} />;
+    const showImages = project.images.map((image)=>{
+        console.log(image)
+        return <img className="w-full h-40   px-2 m-2 " src={image } />
+    })
 
     const { valueAboutRef, valueWorksRef } = useMyContext();
 
@@ -64,4 +67,4 @@ const Projects = ({ projects, selectedProject, projectsSections }) => {
         </div>
     );
 };
-export default Projects;
+export default ProjectsPhone;

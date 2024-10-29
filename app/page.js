@@ -7,7 +7,7 @@ import Works from "@/components/Works";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 
 export default function App() {
-    const [activeItem, setActiveItem] = useState("Home");
+    const [activeItem, setActiveItem] = useState("Works");
 
     // Effect to load the last selected item from local storage on the client
 
@@ -23,49 +23,55 @@ export default function App() {
     };
 
     const [textSize, setTextSize] = useState();
+    const [screenSize, setScreenSize] = useState();
 
     const nameRef = useRef(null);
 
     useLayoutEffect(() => {
         setTimeout(() => {
-            setTextSize(window.innerWidth); 
+            setTextSize(window.innerWidth);
+            const x = window.innerWidth / 100;
+            setScreenSize(x);
         }, 0);
 
         window.addEventListener("resize", () => {
             setTimeout(() => {
                 setTextSize(window.innerWidth);
-                console.log("window.innerWidth");
-                console.log(window.innerWidth);
+                const x = window.innerWidth / 100;
+                setScreenSize(x);
             }, 100);
         });
 
         return window.removeEventListener("resize", () => {
             setTimeout(() => {
                 setTextSize(window.innerWidth);
-                console.log("window.innerWidth");
-                console.log(window.innerWidth);
+                const x = window.innerWidth / 100;
+                setScreenSize(x);
             }, 100);
         });
     }, []);
 
     return (
-        <div className=" grid  h-max   grid-cols-12 divide-x ">
-            <div className="col-span-3 md:col-span-2   ">
+        <div className={` flex justify-between w-full md:px-5`}>
+        
+            <div className="z-50 basis-3/12 md:basis-2/12  ">
                 <Sidebar
                     activeItem={activeItem}
                     handleItemClick={handleItemClick}
                 />
             </div>
-            <div className="  col-span-9 md:col-span-10 ">
+            <div
+                style={{width: screenSize * 75 + "px"}}
+                className="  flex flex-col justify-center items-center -z-1 basis-9/12 md:basis-10/12  " >
                 <div
-                    className="flex   bg-white flex-col w-full  px-5 md:hidden   py-4"
+                    className={`flex sticky top-0 right-10  bg-white flex-col w-full  px-5 md:hidden py-2 z-20`}
                     onClick={() => handleItemClick("Home")}
                 >
                     <div
                         style={{
-                            fontSize: textSize < 150 ? textSize / 30 + "px" : textSize / 20 + "px",  
-                          }}
-                        className="flex justify-end gap-2 w-full"
+                            fontSize:  textSize / (textSize/25) + "px" 
+                        }}
+                        className="flex justify-end gap-2 w-full  "
                     >
                         <span
                             ref={nameRef}
@@ -78,7 +84,7 @@ export default function App() {
                         </span>
                     </div>
                 </div>
-                {activeItem === "Home" && <Home />}
+                {/* {activeItem === "Home" && <Home />} */}
 
                 {activeItem === "Works" && <Works />}
                 {activeItem === "About" && <About />}
