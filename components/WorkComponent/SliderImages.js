@@ -1,5 +1,4 @@
-
-import Image from "next/image"
+import Image from "next/image";
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
@@ -30,10 +29,14 @@ const SliderImages = ({ list }) => {
             onClick={() => handleOpen("", "")}
             className="flex justify-center items-center inset-0 absolute bg-black bg-opacity-80 transition-opacity duration-500 ease-in-out z-50"
         >
-            <motion.div className="w-9/12 h-9/12" layoutId={layoutId} >
-                <Image  src={display} className="w-full h-full object-cover"    
-                   width={600} height={600}
-                    alt="Picture of the author" />
+            <motion.div className="w-9/12 h-9/12" layoutId={layoutId}>
+                <Image
+                    src={display}
+                    className="w-full h-full object-cover"
+                    width={600}
+                    height={600}
+                    alt="Picture of the author"
+                />
             </motion.div>
         </motion.div>
     );
@@ -52,26 +55,22 @@ const SliderImages = ({ list }) => {
                     {list.map((item, idx) => (
                         <SwiperSlide key={item + idx} className="w-full">
                             <motion.div
-                            
                                 onClick={() => handleOpen(item, idx)}
                                 layoutId={item + idx + "image"}
                             >
-
-                            <Image
-                                className="w-full h-full object-cover"
-                                src={item}
-                                width={500}
-                                height={300}
-                                alt="Picture of the author"
+                                <Image
+                                    className="w-full h-full object-cover"
+                                    src={item}
+                                    width={500}
+                                    height={300}
+                                    alt="Picture of the author"
                                 />
-                                </motion.div>
+                            </motion.div>
                         </SwiperSlide>
                     ))}
-                        <SwiperSlide   className=" ">
-                            <motion.img
-                               
-                            />
-                        </SwiperSlide>
+                    <SwiperSlide className=" ">
+                        <motion.img />
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </motion.div>

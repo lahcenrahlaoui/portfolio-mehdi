@@ -1,14 +1,3 @@
-import Image from "next/image";
-import SliderImages from "./SliderImages";
-
-import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
-import { Pagination } from "swiper/modules";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { useMyContext } from "@/context/heightContext";
@@ -18,10 +7,10 @@ const ProjectsPhone = ({ projects, selectedProject, projectsSections }) => {
         (proj) => proj.title === selectedProject.title
     );
 
-    const showImages = project.images.map((image)=>{
-        console.log(image)
-        return <img className="w-full h-40   px-2 m-2 " src={image } />
-    })
+    const showImages = project.images.map((image) => {
+        console.log(image);
+        return <img className="w-full h-40   px-2 m-2 " src={image} />;
+    });
 
     const { valueAboutRef, valueWorksRef } = useMyContext();
 

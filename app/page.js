@@ -7,11 +7,8 @@ import Works from "@/components/Works";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 
 export default function App() {
-    const [activeItem, setActiveItem] = useState("Works");
+    const [activeItem, setActiveItem] = useState("Home");
 
-    // Effect to load the last selected item from local storage on the client
-
-    // Effect to save the active item to local storage
     useEffect(() => {
         if (typeof window !== "undefined" && activeItem) {
             window.localStorage.setItem("activeItem", activeItem);
@@ -53,7 +50,6 @@ export default function App() {
 
     return (
         <div className={` flex justify-between w-full md:px-5`}>
-        
             <div className="z-50 basis-3/12 md:basis-2/12  ">
                 <Sidebar
                     activeItem={activeItem}
@@ -61,15 +57,16 @@ export default function App() {
                 />
             </div>
             <div
-                style={{width: screenSize * 75 + "px"}}
-                className="  flex flex-col justify-center items-center -z-1 basis-9/12 md:basis-10/12  " >
+                style={{ width: screenSize * 75 + "px" }}
+                className="  flex flex-col justify-center items-center -z-1 basis-9/12 md:basis-10/12 Home "
+            >
                 <div
                     className={`flex sticky top-0 right-10  bg-white flex-col w-full  px-5 md:hidden py-2 z-20`}
                     onClick={() => handleItemClick("Home")}
                 >
                     <div
                         style={{
-                            fontSize:  textSize / (textSize/25) + "px" 
+                            fontSize: textSize / (textSize / 25) + "px",
                         }}
                         className="flex justify-end gap-2 w-full  "
                     >

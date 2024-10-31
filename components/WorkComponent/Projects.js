@@ -1,23 +1,12 @@
-import Image from "next/image";
+
 import SliderImages from "./SliderImages";
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
-import { Pagination } from "swiper/modules";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { useMyContext } from "@/context/heightContext";
 
 const Projects = ({ projects, selectedProject, projectsSections }) => {
-    const project = projects.find(
-        (proj) => proj.title === selectedProject.title
-    );
-
+    
     const showImages = <SliderImages list={selectedProject?.images} />;
 
     const { valueAboutRef, valueWorksRef } = useMyContext();

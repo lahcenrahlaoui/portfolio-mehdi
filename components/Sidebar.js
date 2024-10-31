@@ -161,7 +161,7 @@ export default function Sidebar({ activeItem, handleItemClick }) {
                                 }}
                                 className="h-full relative "
                             >
-                                <div className="fixed bottom-2 w-full flex gap-1 px-4 bg-green-400  ">
+                                <div className="fixed bottom-2 w-full flex gap-1 px-4  ">
                                     <a
                                         href="https://www.youtube.com/@mehdihachid"
                                         target="_blank"

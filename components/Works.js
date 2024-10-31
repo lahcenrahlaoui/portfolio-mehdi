@@ -15,10 +15,7 @@ const Works = () => {
 
     const {
         setProjects,
-        setValueWorksRef,
-        setValueAboutRef,
         screenSize,
-        setScreenSize,
         projects,
         setSelectedProject,
         selectedProject,
@@ -152,18 +149,16 @@ const Works = () => {
                 ) : (
                     <div className="basis-10/12  "></div>
                 )
+            ) : selectedProject ? (
+                <div className="basis-9/12  ">
+                    <ProjectsPhone
+                        projects={projects}
+                        selectedProject={selectedProject}
+                        projectsSections={projectsSections}
+                    />
+                </div>
             ) : (
-                selectedProject ? (
-                    <div className="basis-9/12  ">
-                        <ProjectsPhone
-                            projects={projects}
-                            selectedProject={selectedProject}
-                            projectsSections={projectsSections}
-                        />
-                    </div>
-                ) : (
-                    <div className="basis-10/12  "></div>
-                )
+                <div className="basis-10/12  "></div>
             )}
         </div>
     );
